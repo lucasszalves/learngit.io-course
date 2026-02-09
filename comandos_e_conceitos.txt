@@ -1,6 +1,6 @@
 3 areas:
 
-1 - workspace: arquivos em disco                                git commit -a |
+1 - working directory: arquivos em disco                                git commit -a |
     git add |                                                                 |    
             v                                                                 |
 2 - staging area: arquivos selecionados para serem commitados                 |
@@ -17,3 +17,6 @@ git log: mostra os commits, o hash completo e a mensagem
 git log --stat: mostra quais arquivos foram modificados
 git show <hash>: ver as linhas modificadas
 git log --oneline: resumos dos commits, mostra só as mensagens e uma versão curta do hash (que pode ser usada pra acessar o commit)
+
+git restore --staged <file>: unstageia arquivo
+git restore <file>: desfaz alterações do arquivo MODIFIED, volta para o estado do último commit (PERDE AS MODIFICAÇÕES NÃO COMMITADAS), tipo um ctrl+z. não funciona para arquivos staged (usar flag --staged)
