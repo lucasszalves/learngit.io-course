@@ -10,6 +10,8 @@
 
 HEAD: ponteiro para o commit atual
 
+merging: pega as incoming changes, agrupa elas todas de uma vez só (todas as modificações em cada commit da branch que vem) e adiciona no merge commit, como se aquilo tivesse sido feito tudo de uma vez só na branch que recebe
+fast-forward merge: quando uma branch é criada e nada muda na original. quando for feito o merge da nova na original, o ponteiro da original só passa pro mesmo commit da nova (como se fosse um caminho único)
 
 
 COMANDOS:
@@ -24,5 +26,10 @@ git restore <file>: desfaz alterações do arquivo MODIFIED, volta para o estado
 git commit --amend -m 'mensagem corrigida': corrigir mensagem do ÚLTIMO commit
 git commit --amend --no-edit: não muda a mensagem do commit, só adiciona os arquivos STAGED ao último commit
 git reset HEAD~1: volta um commit, e as modificações do último commit (que foi deletado), vão pro working directory (como se fosse voltar no tempo para logo antes de dar o commit)
+
+comandos NOVOS (checkout == switch)
+git branch <branch-name>: novo branch
+git switch <name>: troca branch
+git switch -c <name>: cria e muda a branch
 
 git merge <incoming branch>: feito na branch que irá receber as modificações da incoming branch
