@@ -8,6 +8,8 @@
                v                                                              v
 3 - repositorio: arquivos commitados e historico gravado
 
+HEAD: ponteiro para o commit atual
+
 
 
 COMANDOS:
