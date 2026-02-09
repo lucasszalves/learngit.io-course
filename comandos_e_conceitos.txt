@@ -10,6 +10,8 @@
 
 HEAD: ponteiro para o commit atual
 
+merging: pega as incoming changes, agrupa elas todas de uma vez só (todas as modificações em cada commit da branch que vem) e adiciona no merge commit, como se aquilo tivesse sido feito tudo de uma vez só na branch que recebe
+
 
 
 COMANDOS:
