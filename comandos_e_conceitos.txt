@@ -61,3 +61,5 @@ git clone --mirror <url>: cópia read-only
 git remote -v: ver local do repo remoto
 git branch --all: ver todas as branches do remote
 git branch -vv: ver branches TRACKED (baixadas), por padrão só vem a main
+
+git push <repo> <branch>: se for deixado em branco, o git upa pra branch selecionada e pro repo origin padrão
