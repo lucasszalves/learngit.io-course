@@ -46,7 +46,6 @@ git switch -c <name>: cria e muda a branch
 git merge <incoming branch>: feito na branch que irá receber as modificações da incoming branch
 git merge --abort: oque sera q faz em
 
-stashes:
 git stash: pega todas as modificações STAGED e bota na stash (pilha)
 git stash -m '<msg>': bota alterações na stash com nome
 git stash list: lista das stashes
@@ -56,3 +55,9 @@ git stash pop --index <index>: coloca de volta a stash específica
 git stash pop <index>: merma coisa
 git stash branch <branch-name> <stash-index>: cria uma branch baseada na stash de index indicado
 OBS.: PODEM TER MERGE CONFLICTS QUANDO COLOCADAS DE VOLTA!!
+
+git clone <url>: https para configuraçao rapida (tem q digitar credenciais com frequencia), e ssh para autenticação mais segura e rápida (gerar par de chaves antes)
+git clone --mirror <url>: cópia read-only
+git remote -v: ver local do repo remoto
+git branch --all: ver todas as branches do remote
+git branch -vv: ver branches TRACKED (baixadas), por padrão só vem a main
