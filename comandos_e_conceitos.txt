@@ -14,6 +14,17 @@ merging: pega as incoming changes, agrupa elas todas de uma vez só (todas as mo
 fast-forward merge: quando uma branch é criada e nada muda na original. quando for feito o merge da nova na original, o ponteiro da original só passa pro mesmo commit da nova (como se fosse um caminho único)
 para cada conflito resolvido, faz um git add ou git rm para cada arquivo que teve erro para sinalizar pro git que foi resolvido, fica mais fácil de ver as resoluções no git status
 
+remote: repositorio remoto (muitas vezes chamado de origin)
+quando um repo é clonado, a pasta .git vem pro pc local
+
+origin/main é simplesmente uma branch que vem da origem (remote reference pointer)
+push: sincroniza mudanças locais para o remoto, joga origin/main para a main local
+fetch: puxa as mudanças do remoto, mas só para a origin/main. o working directory não muda pq a main local ainda está desatualizada
+
+quando o local e o remoto são diferentes, a main local diverge da origin/main, e essa é enxergada literalmente como uma branch diferente
+para resolver, fazer merge normal, ou REBASE (colocar os commits locais a frente da origin/main, mantendo uma linha reta, e qdo as mudanças forem pushadas, o remoto vai fazer um fast-forward merge)
+
+
 COMANDOS:
 git log: mostra os commits, o hash completo e a mensagem
 git log --stat: mostra quais arquivos foram modificados
