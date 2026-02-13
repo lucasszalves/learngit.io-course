@@ -65,3 +65,11 @@ git branch -vv: ver branches TRACKED (baixadas), por padrão só vem a main
 git push <repo> <branch>: se for deixado em branco, o git upa pra branch selecionada e pro repo origin padrão
 
 git fetch <repo> <branch>: só atualiza a origin/main (se for deixado em branco ou explicitado origin main), sem mexer na main local (se fizer um git status vai dizer que a branch local está atrás da remote)
+git merge (usar dps do fetch para incorporar mudanças): literalmente a mesma coisa que dar merge em branches locais. podem ter conflitos se elas tiverem divergido, aquela baboseira toda
+
+pull == fetch+merge -> pode ser perigoso, já que vai acontecer um merge com código novo que vc nem sabe o que é! é bom se acostumar com fetch + merge antes
+git pull <repo> <branch>: se deixar em branco, vai ser da origin e todas as branches
+MODOS: 
+    --ff-only: da merge só se fast forward for possível (só faz se nao tiver divergencias, se tiver, é como se só fosse feito o fetch sem merge)
+    --ff: 3-way merge, se necessário (se der ff, faz o ff)
+    --rebase: incorpora mudanças sem fazer merges, coloca os merges locais (divergentes) à frente dos remotos
