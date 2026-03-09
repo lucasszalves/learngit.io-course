@@ -73,3 +73,5 @@ MODOS:
     --ff-only: da merge só se fast forward for possível (só faz se nao tiver divergencias, se tiver, é como se só fosse feito o fetch sem merge)
     --ff: 3-way merge, se necessário (se der ff, faz o ff)
     --rebase: incorpora mudanças sem fazer merges, coloca os merges locais (divergentes) à frente dos remotos
+
+git push -u origin <branch> : pusha uma branch nova pro remote
