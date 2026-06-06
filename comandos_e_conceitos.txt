@@ -76,3 +76,5 @@ MODOS:
 
 git push -u origin <branch> : pusha uma branch nova pro remote
 pra baixar uma branch nova: dar fetch/pull/clone, e dar checkout naquela branch pra criar uma cópia editável (ela é baixada com os comandos anteriores, mas não é editável)
+git branch -a: lista todas as branches locais e "remotas"
+git switch <branch>: se ela não tiver sido baixada, vai baixar
