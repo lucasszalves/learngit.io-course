@@ -78,3 +78,12 @@ git push -u origin <branch> : pusha uma branch nova pro remote
 pra baixar uma branch nova: dar fetch/pull/clone, e dar checkout naquela branch pra criar uma cópia editável (ela é baixada com os comandos anteriores, mas não é editável)
 git branch -a: lista todas as branches locais e "remotas"
 git switch <branch>: se ela não tiver sido baixada, vai baixar
+
+FEATURE BRANCH WORKFLOW:
+ao invés de geral commitar na main, são feitas branches para features em específico
+depois de aprovadas, as features são adicionadas/mergeadas na main
+a branch main é o que alimenta o pipeline do processo de produção:
+    repo -> build -> teste -> live to customers
+branch dev usa um conceito parecido:
+dela, saem as features. cada commit nela corresponde a uma feature nova
+depois, ela é mergeada na main para produção: um commit na main corresponde a varias features aprovadas
