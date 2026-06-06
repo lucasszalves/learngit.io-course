@@ -87,3 +87,8 @@ a branch main é o que alimenta o pipeline do processo de produção:
 branch dev usa um conceito parecido:
 dela, saem as features. cada commit nela corresponde a uma feature nova
 depois, ela é mergeada na main para produção: um commit na main corresponde a varias features aprovadas
+
+FORK WORKFLOW (muito usado em open source):
+fork = um clone server-side do repositório em questão
+depois de fazer um fork de um projeto open-source, aí eu posso clonar na minha máquina e sair mexendo e pushando
+pra pedir pros donos do repositório original para incorporarem as minhas mudanças, fazer um PULL REQUEST
