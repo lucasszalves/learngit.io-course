@@ -92,3 +92,29 @@ FORK WORKFLOW (muito usado em open source):
 fork = um clone server-side do repositório em questão
 depois de fazer um fork de um projeto open-source, aí eu posso clonar na minha máquina e sair mexendo e pushando
 pra pedir pros donos do repositório original para incorporarem as minhas mudanças, fazer um PULL REQUEST
+
+=====================================
+
+REBASE:
+modificações em commits e na árvore de commits!
+split, delete, amend, reorder, rewording, squashing -> INTERACTIVE REBASE
+entretanto, commits são imutáveis: na verdade, o rebase pega os commits e cria novos com as modificações pedidas
+exemplo mais famoso de uso do rebase: alternativa ao merge (aula 1 e 2 de rebase theory)
+git rebase <branch fonte (nova raiz)> <branch a ter a origem modificada> : segundo argumento opcional, toma a branch atual como base
+evitar rebasear branches que existam no remoto: ao fazer o push, o git vai reclamar
+    da pra contornar fazendo um force push -> sobrescreve todos os commits da branch original e substitui pela rebaseada -> pode sobrescrever commits de terceiros na branch original!
+
+rebase conflicts:
+    as vezes, o git vai encontrar problemas ao tentar copiar os commits (durante o rebase, ele copia commit por commit), porque podem ter alterações divergentes entre o commit da branch topic e da branch source
+    muito parecido com um merge commit!
+
+rebase vs merge:
+    3-way-merge -> quando queremos trazer as alterações de uma branch filha para a que originou esta
+        e quando queremos atualizar a merge filha com as alterações da branch original?
+        back merge: merge DA original PARA a filha
+            polui a árvore de commits, adiciona vários merge commits possivelmente desinteressantes a outros colaboradores que queiram entrar no projeto
+        rebase: deixa a árvore de commits mais limpa, entretanto, reescreve o histórico (natureza destrutiva)
+            MAIOR VANTAGEM: ao ser feito o merge para a branch original (fim do ciclo de vida da filha), é possível um fast-forward merge!
+            ao rebasear a branch filha várias vezes, é como se os conflitos fossem "dissolvidos" ao longo do tempo pelo próprio desenvolvedor daquela branch
+        
+    o maior risco do rebase é sobrescrever o trabalho de outros, então sempre é recomendado apenas para branches LOCAIS ou de uso único de um dev
